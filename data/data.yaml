@@ -1,0 +1,78 @@
+# Test Data for Login Tests
+base_url: "https://www.saucedemo.com"
+
+login_data:
+  valid_users:
+    standard_user:
+      username: "standard_user"
+      password: "secret_sauce"
+    performance_glitch_user:
+      username: "performance_glitch_user"
+      password: "secret_sauce"
+    problem_user:
+      username: "problem_user"
+      password: "secret_sauce"
+  
+  invalid_users:
+    locked_out_user:
+      username: "locked_out_user"
+      password: "secret_sauce"
+    invalid_user:
+      username: "invalid_user"
+      password: "invalid_password"
+    wrong_username:
+      username: "wrong_username"
+      password: "secret_sauce"
+    wrong_password:
+      username: "standard_user"
+      password: "wrong_password"
+  
+  empty_credentials:
+    username: ""
+    password: ""
+  
+  error_messages:
+    username_password_mismatch: "Epic sadface: Username and password do not match any user in this service"
+    locked_user: "Epic sadface: Sorry, this user has been locked out."
+    username_required: "Epic sadface: Username is required"
+    password_required: "Epic sadface: Password is required"
+  
+  test_scenarios:
+    valid_login:
+      username: "standard_user"
+      password: "secret_sauce"
+      expected_result: "success"
+    
+    invalid_username:
+      username: "invalid_user"
+      password: "secret_sauce"
+      expected_error: "Epic sadface: Username and password do not match any user in this service"
+    
+    invalid_password:
+      username: "standard_user"
+      password: "invalid_password"
+      expected_error: "Epic sadface: Username and password do not match any user in this service"
+    
+    locked_user:
+      username: "locked_out_user"
+      password: "secret_sauce"
+      expected_error: "Epic sadface: Sorry, this user has been locked out."
+    
+    empty_credentials:
+      username: ""
+      password: ""
+      expected_error: "Epic sadface: Username is required"
+
+products_data:
+  products_Backpack: "Sauce Labs Backpack"
+  products_Bike_Light: "Sauce Labs Bike Light"
+  products_Bolt_T_Shirt: "Sauce Labs Bolt T-Shirt"
+  products_Fleece_Jacket: "Sauce Labs Fleece Jacket"
+  products_Onesie: "Sauce Labs Onesie"
+  products_T-Shirt: "Test.allTheThings() T-Shirt (Red)"
+
+customer_data:
+  first_name: "John"
+  last_name: "Doe"
+  postal_code: "12345"
+
